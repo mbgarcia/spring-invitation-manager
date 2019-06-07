@@ -10,9 +10,19 @@
 	<link th:href="@{/webjars/bootstrap/css/bootstrap-theme.min.css}" rel="stylesheet" />
 </head>
 <body>
+	<form class="form-inline" method="POST" th:object="${guest}" th:action="@{/guests}" style="margin: 20px 0">
+    	<div class="form-group">
+        	<input type="text" th:field="*{name}" class="form-control" placeholder="Name"/>
+        	
+        	<input type="text" th:field="*{companions}" class="form-control" placeholder="Companions"/>
+        	
+        	<button type="submit" class="btn btn-primary">Add</button>
+    	</div>
+    </form>
+    
 	<div class="panel panel-default" style="margin: 10px">
     	<div class="panel-heading">
-            <h1 class="panel-title">Lista de convidados</h1>
+            <h1 class="panel-title">Guests List</h1>
 		</div>
         <div class="panel-body">
             <table class="table">
