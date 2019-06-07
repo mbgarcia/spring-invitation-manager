@@ -10,8 +10,24 @@
 	<link th:href="@{/webjars/bootstrap/css/bootstrap-theme.min.css}" rel="stylesheet" />
 </head>
 <body>
-
-	<h1>Guest list</h1>
-	
+	<div class="panel panel-default" style="margin: 10px">
+    	<div class="panel-heading">
+            <h1 class="panel-title">Lista de convidados</h1>
+		</div>
+        <div class="panel-body">
+            <table class="table">
+            	<thead>
+            		<tr>Name</tr>
+            		<tr>Companions</tr>
+            	</thead>
+            	<tbody>
+            		<tr th:each='guest :${guests}'>
+            			<td th:text="${guest.name}">       </td>
+            			<td th:text="${guest.companions}"> </td>
+            		</tr>
+            	</tbody>
+            </table>
+        </div>
+    </div>
 </body>
 </html>
