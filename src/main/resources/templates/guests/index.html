@@ -1,15 +1,7 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width" />
-	
-	<title>Guests</title>
-	
-	<link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"       rel="stylesheet" />
-	<link th:href="@{/webjars/bootstrap/css/bootstrap-theme.min.css}" rel="stylesheet" />
-</head>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" th:include="layout">
 <body>
+<div th:fragment="content">
 	<form class="form-inline" method="POST" th:object="${guest}" th:action="@{/guests}" style="margin: 20px 0">
     	<div class="form-group">
         	<input type="text" th:field="*{name}" class="form-control" placeholder="Name"/>
@@ -39,5 +31,6 @@
             </table>
         </div>
     </div>
+</div>
 </body>
 </html>
