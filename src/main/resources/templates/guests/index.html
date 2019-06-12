@@ -3,10 +3,13 @@
 <body>
 <div th:fragment="content">
 	<form class="form-inline" method="POST" th:object="${guest}" th:action="@{/guests}" style="margin: 20px 0">
+		<p th:if="${#fields.hasErrors('all')}" th:errors="*{all}">Incorrect date</p>
     	<div class="form-group">
         	<input type="text" th:field="*{name}" class="form-control" placeholder="Name"/>
+        	<span th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Error description</span>
         	
         	<input type="text" th:field="*{companions}" class="form-control" placeholder="Companions"/>
+        	<span th:if="${#fields.hasErrors('companions')}" th:errors="*{companions}">Error description</span>
         	
         	<button type="submit" class="btn btn-primary">Add</button>
     	</div>
